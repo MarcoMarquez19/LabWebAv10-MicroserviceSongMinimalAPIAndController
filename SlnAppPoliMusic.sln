@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceSongV5", "MicroserviceSongV5\MicroserviceSongV5.csproj", "{E85440A2-7D0C-486C-B45B-DA7C8F819164}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceControllerSongV5", "MicroserviceControllerSongV5\MicroserviceControllerSongV5.csproj", "{676634E6-9BAD-43C3-9E87-029165BE19BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{E85440A2-7D0C-486C-B45B-DA7C8F819164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85440A2-7D0C-486C-B45B-DA7C8F819164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85440A2-7D0C-486C-B45B-DA7C8F819164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{676634E6-9BAD-43C3-9E87-029165BE19BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{676634E6-9BAD-43C3-9E87-029165BE19BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{676634E6-9BAD-43C3-9E87-029165BE19BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{676634E6-9BAD-43C3-9E87-029165BE19BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/MicroserviceControllerSongV5.props" />
+</Project>
