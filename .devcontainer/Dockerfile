@@ -5,22 +5,24 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     unzip \
-    gnupg2
-    && rm -rf /var/lib/apt/lists/*
+    gnupg2 && \
+    rm -rf /var/lib/apt/lists/*
 
 # Opcional: Instalar Node.js si lo necesitas
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
 
-RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-&& curl -fsSL https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list
-&& apt-get update
-&& ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
-&& echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+# Instalar herramientas de SQL Server
+RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl -fsSL https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    apt-get update && \
+    ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 
-# Configurar el PATH de dotnet para global tools
+# Configurar el PATH de dotnet y herramientas de SQL Server
 ENV PATH="${PATH}:/root/.dotnet/tools:/opt/mssql-tools/bin"
 
+# Variables de entorno para SQL Server
 ENV SQL_SERVER_HOST="sql-server-host"
 ENV SQL_SERVER_USER="sa"
 ENV SQL_SERVER_PASSWORD="your_strong_password"
