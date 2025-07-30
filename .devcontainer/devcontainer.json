@@ -11,24 +11,17 @@
         "ms-python.python",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
-        "ms-mssql.mssql" 
+        "ms-mssql.mssql"
       ]
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {
-      "acceptEula": true,
-      "version": "latest",
-      "password": "password",
-      "database": "DB",
-      "user": "sa"
-    }
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "forwardPorts": [
-    5000, 
-    5001, 
-    1433,  
+    5000,
+    5001,
+    1433,
     15672
   ],
   "postCreateCommand": "dotnet workload install wasm-tools",
