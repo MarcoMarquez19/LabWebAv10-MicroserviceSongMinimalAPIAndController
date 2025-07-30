@@ -1,0 +1,42 @@
+{
+  "name": "blazor-microservices-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "ms-mssql.mssql"  // Extensión para SQL Server
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/mssql:1": {
+      "acceptEula": true,
+      "version": "2022-latest",
+      "password": "your_strong_password_123!",  // Cambia esto por tu contraseña segura
+      "database": "galeria_arte_usuariosdb",
+      "user": "sa"
+    }
+  },
+  "forwardPorts": [
+    5000, 
+    5001, 
+    1433,  // Puerto por defecto de SQL Server (reemplaza 5432 de PostgreSQL)
+    15672
+  ],
+  "postCreateCommand": "dotnet workload install wasm-tools",
+  "remoteEnv": {
+    "SQL_SERVER_HOST": "localhost",
+    "SQL_SERVER_USER": "sa",
+    "SQL_SERVER_PASSWORD": "your_strong_password_123!",
+    "SQL_SERVER_DATABASE": "galeria_arte_usuariosdb",
+    "ConnectionStrings__DefaultConnection": "Server=localhost;Database=galeria_arte_usuariosdb;User Id=sa;Password=your_strong_password_123!;TrustServerCertificate=true;"
+  }
+}
