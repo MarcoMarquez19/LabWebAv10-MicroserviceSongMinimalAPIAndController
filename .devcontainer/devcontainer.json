@@ -11,7 +11,7 @@
         "ms-python.python",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
-        "ms-mssql.mssql"  // Extensión para SQL Server
+        "ms-mssql.mssql" 
       ]
     }
   },
@@ -20,7 +20,7 @@
     "ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {
       "acceptEula": true,
       "version": "2022-latest",
-      "password": "password",  // Cambia esto por tu contraseña segura
+      "password": "password",
       "database": "DB",
       "user": "sa"
     }
@@ -28,7 +28,7 @@
   "forwardPorts": [
     5000, 
     5001, 
-    1433,  // Puerto por defecto de SQL Server (reemplaza 5432 de PostgreSQL)
+    1433,  
     15672
   ],
   "postCreateCommand": "dotnet workload install wasm-tools",
