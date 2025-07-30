@@ -17,11 +17,11 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/mssql:1": {
+    "ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {
       "acceptEula": true,
       "version": "2022-latest",
-      "password": "your_strong_password_123!",  // Cambia esto por tu contraseña segura
-      "database": "galeria_arte_usuariosdb",
+      "password": "password",  // Cambia esto por tu contraseña segura
+      "database": "DB",
       "user": "sa"
     }
   },
